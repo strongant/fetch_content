@@ -21,6 +21,8 @@
       "bower_components/ng-tags-input/ng-tags-input.min.js",
       "bower_components/nya-bootstrap-select/dist/js/nya-bs-select.min.js",
       "bower_components/bootstrapvalidator/dist/js/bootstrapValidator.js",
+      "lib/md5.js",
+      "PF/Cookie.js",
       "js/popup/popupView.js",
       "js/popup/login.js",
       "PF/PFConstant.js",
@@ -31,7 +33,7 @@
     "matches": ["*://*/*"]
   }],
   "web_accessible_resources": [
-    "images/spit.png"
+    "images/spit.png", "background.js"
   ],
   "permissions": ["contextMenus", "cookies", "tabs", "storage",
     "unlimitedStorage", "notifications", "http://*/*", "https://*/*"

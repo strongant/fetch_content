@@ -1,7 +1,7 @@
 function LoginController() {
   var isAutoLogin = false;
   var errValidator = $('#div_error_validator');
-  var user_id = $('#user_id');
+  var username = $('#username');
   var password = $('#password');
   var keep_password = $('#kepp_password');
 
@@ -43,11 +43,27 @@ function LoginController() {
 
   //执行请求登陆的操作
   function doLogin() {
-    console.log('login');
+    var loginMsg = chrome.i18n.getMessage('logging');
+    PopupView.showWaiting(loginMsg);
+    var loginParam = {
+      client_type: PF.Constant.LOGIN_PARAMS.CLIENT_TYPE,
+      api_version: PF.Constant.LOGIN_PARAMS.API_VERSION,
+      username: username.val(),
+      password: 'md5.' + hex_md5(password.val())
+    };
+    login(loginParam);
   }
 
   function login(loginParam) {
-    console.log('login');
+    console.log(loginParam);
+    var port = chrome.extension.connect({
+      name: 'login'
+    });
+    port.postMessage(loginParam);
+    port.onMessage.addListener(function(res) {
+      var code = res.code;
+      console.log('code' + code);
+    });
   }
   this.autoLogin = autoLogin;
 }

@@ -28,8 +28,8 @@ var PopupView = {
   showWaiting: function(msg) {
     $('#waiting').show();
     $('#waiting-label').html(msg);
-    $('#wiz_login').hide();
-    $('#wiz_clip_detail').hide();
+    $('#PF_login').hide();
+    $('#PF_clip_detail').hide();
   },
   showLogin: function() {
     $("#waiting").hide();

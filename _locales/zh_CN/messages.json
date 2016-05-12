@@ -59,6 +59,9 @@
   "category_tip": {
     "message": "文件夹: "
   },
+  "logining": {
+    "message": "正在登录..."
+  },
   "refresh": {
     "message": "刷新"
   },

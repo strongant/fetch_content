@@ -27,10 +27,10 @@ function LoginController() {
   }
   //点击登陆按钮或者回车键进行触发此方法的调用
   function loginOnSubmit() {
-
     if (checkUserName() && checkPassword()) {
       doLogin();
     }
+    return false;
   }
 
   function checkUserName() {
@@ -43,7 +43,8 @@ function LoginController() {
 
   //执行请求登陆的操作
   function doLogin() {
-    var loginMsg = chrome.i18n.getMessage('logging');
+    var loginMsg = chrome.i18n.getMessage('logining');
+    console.log('loginMsg:' + loginMsg);
     PopupView.showWaiting(loginMsg);
     var loginParam = {
       client_type: PF.Constant.LOGIN_PARAMS.CLIENT_TYPE,
@@ -51,7 +52,8 @@ function LoginController() {
       username: username.val(),
       password: 'md5.' + hex_md5(password.val())
     };
-    login(loginParam);
+    console.log(loginParam);
+    //login(loginParam);
   }
 
   function login(loginParam) {

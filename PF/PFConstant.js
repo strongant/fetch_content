@@ -7,7 +7,7 @@ PF.Constant = {
     COOKIE_URL: 'http://service.pf.cn/web',
     COOKIE_USER: 'pf-clip-user',
     COOKIE_CERT: 'pf-clip-cert',
-    API_URL: 'http://api.pf.cn/openapi_url',
+    API_URL: 'http://localhost:3000/pf/openAPI'
   },
   LOGIN_PARAMS: {
     CLIENT_TYPE: 'web_chrome',

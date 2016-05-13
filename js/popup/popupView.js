@@ -26,6 +26,7 @@ var PopupView = {
     $('#waiting').hide();
   },
   showWaiting: function(msg) {
+    console.log('popupView:' + msg);
     $('#waiting').show();
     $('#waiting-label').html(msg);
     $('#PF_login').hide();

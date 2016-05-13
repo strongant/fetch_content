@@ -156,7 +156,7 @@ function portLoginAjax(loginParam, port, params, callback) {
       PF_Context.kbGuid = responseJSON.kb_guid;
       PF_Context.myPFEmail = responseJSON.mypf_email;
       if (params) {
-        saveToServer(params);
+        //saveToServer(params);
       }
       if (port) {
         port.postMessage({
@@ -174,6 +174,7 @@ function portLoginAjax(loginParam, port, params, callback) {
   //缓存username
   PF_Context.username = loginParam.username;
   var openapiUrl = getOpenApiUrl();
+  console.log("getOpenApiUrl:" + openapiUrl);
   $.ajax({
     type: 'POST',
     url: openapiUrl + '/login',

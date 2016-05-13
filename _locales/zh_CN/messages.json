@@ -84,7 +84,7 @@
     "message": "登录"
   },
   "logining": {
-    "message": "正在登录"
+    "message": "正在登录..."
   },
   "note_login": {
     "message": "请使用帐号登录"
